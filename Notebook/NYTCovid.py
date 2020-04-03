@@ -14,9 +14,9 @@ import pandas as pd
 import requests
 import matplotlib.pyplot as plt
 import seaborn as sns
-import time
 from datetime import datetime
 from io import StringIO
+from time import time, sleep
 
 class NYTCovid:
     def __init__(self):
@@ -70,7 +70,7 @@ class NYTCovid:
         self.statedict= {}
         self.countydict= {}
         print("Processing...")
-        t1 = time.time()
+        t1 = time()
         if self._stateupdated:
             self.statelist = list(self.statedf['state'].unique())
             for s in self.statelist:
@@ -86,16 +86,12 @@ class NYTCovid:
                 county_df['newdeaths'] = county_df['deaths'].diff()
                 self.countydict[c]=county_df
         self._processed = True
-        t2 = time.time()
+        t2 = time()
         delt = round(t2-t1,3)
         print("Finished. Took {} seconds".format(delt))
     
-    def plot_state(self,
-                   state='New York',
-                   last_30_days=False):
-        """
-        Plots statewise data
-        """
+    def plot_state(self, state='New York', last_30_days=False):
+        'Plots statewise data'
         if self._processed==False:
             print("Data not processed. Cannot plot statewise.")
             return None
@@ -194,9 +190,7 @@ class NYTCovid:
             plt.legend(states,fontsize=14)
             plt.show()
     
-    def rankState(self,
-                  N=5,
-                  daterank=None):
+    def rankState(self, N=5, daterank=None):
         """
         Ranks the states in a bar chart
         Arguments:
@@ -261,6 +255,7 @@ class NYTCovid:
 
 def main():
     n=NYTCovid()
+    n.today()
     n.dateUpdate()
     n.updateState()
     n.peek()

@@ -1,5 +1,9 @@
 #############################################################
-# Hello all, I'm Daniel Berrones and as you can see, I have forked this repo that Dr. Sarkar has brilliantly put together for this COVID-19 data offered by the New York Times.  I hope that you're using your time wisely whilst adhering to the stay at home procedure -- as you can see I am!
+# Hello all, I'm Daniel Berrones and as you can see, I have forked 
+# this repo that Dr. Sarkar has brilliantly put together for COVID-19 data 
+# offered by the New York Times.  I hope that you're using your time wisely 
+# whilst adhering to the stay at home procedure -- as you can see I am!
+#############################################################
 # Email (daniel.a.berrones@gmail.com)
 # Website (http://www.danielberrones.com)
 #############################################################

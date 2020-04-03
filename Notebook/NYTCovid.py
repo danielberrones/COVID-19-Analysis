@@ -18,7 +18,7 @@ from datetime import datetime
 from io import StringIO
 from time import time, sleep
 
-class NYTCovid:
+class CoronaVirus:
     def __init__(self):
         self.statedf = None
         self.countydf = None
@@ -254,8 +254,9 @@ class NYTCovid:
 
 
 def main():
-    n=NYTCovid()
+    n=CoronaVirus()
     n.today()
+    sleep(2)
     n.dateUpdate()
     n.updateState()
     n.peek()

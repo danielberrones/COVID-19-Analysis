@@ -2,7 +2,7 @@
 # Hello all, I'm Daniel Berrones and as you can see, I have forked 
 # this repo that Dr. Sarkar has brilliantly put together for COVID-19 data 
 # offered by the New York Times.  I hope that you're using your time wisely 
-# whilst adhering to the stay at home procedure -- as you can see I am!
+# whilst adhering to the stay at home procedures -- as you can see I am! 
 #############################################################
 # Email (daniel.a.berrones@gmail.com)
 # Website (http://www.danielberrones.com)
@@ -11,12 +11,12 @@
 
 import numpy as np
 import pandas as pd
-import io
 import requests
 import matplotlib.pyplot as plt
 import seaborn as sns
 import time
 from datetime import datetime
+from io import StringIO
 
 class NYTCovid:
     def __init__(self):
@@ -36,7 +36,7 @@ class NYTCovid:
                      url="https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"):
         url = url
         s=requests.get(url).content
-        self.statedf = pd.read_csv(io.StringIO(s.decode('utf-8')))
+        self.statedf = pd.read_csv(StringIO(s.decode('utf-8')))
         self.statedf['date'] =  pd.to_datetime(self.statedf['date'], format='%Y-%m-%d')
         self._stateupdated = True
     
@@ -44,7 +44,7 @@ class NYTCovid:
                      url="https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"):
         url = url
         s=requests.get(url).content
-        self.countydf = pd.read_csv(io.StringIO(s.decode('utf-8')))
+        self.countydf = pd.read_csv(StringIO(s.decode('utf-8')))
         self.countydf['date'] =  pd.to_datetime(self.countydf['date'], format='%Y-%m-%d')
         self._countyupdated = True
     

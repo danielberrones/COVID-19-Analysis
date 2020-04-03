@@ -30,6 +30,7 @@ class NYTCovid:
     def today(self):
         'Prints today\'s date'
         print("Today is:",self._today.strftime("%B %d, %Y"))
+        return None
     
     def updateState(self,
                      url="https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"):

@@ -1,7 +1,11 @@
+#Hello all, I'm Daniel Berrones and I plan to insert my own ideas into the interface that Dr. Sarkar has brilliantly put together for this COVID-19 data.
+###### Thank you Dr. Sarkar #########
+#####For Crafting This Helpful Tool#######
 
 # NYTCovid class definition
 # Dr. Tirthajyoti Sarkar, Fremont, CA
 # March-April 2020
+
 
 import numpy as np
 import pandas as pd
@@ -45,16 +49,16 @@ class NYTCovid:
         if self._stateupdated:
             print("Date of the latest data:",self.statedf.iloc[-1]['date'].date())
         else:
-            print("Data has not been updated even once!")
+            print("Data has not been updated!")
     
     def peek(self):
         if self._stateupdated:
-            print("First 5 rows of the state data")
+            print("First 5 rows of state data")
             print("="*50)
             print(self.statedf.head())
         if self._countyupdated:
             print()
-            print("First 5 rows of the county data")
+            print("First 5 rows of county data")
             print("="*50)
             print(self.countydf.head())
     
@@ -90,11 +94,11 @@ class NYTCovid:
         Plots statewise data
         """
         if self._processed==False:
-            print("Data not processed yet. Cannot plot statewise.")
+            print("Data not processed. Cannot plot statewise.")
             return None
         
         s = str(state)
-        assert s in self.statelist,"Input does not appear in the list of states. Possibly wrong name/spelling"
+        assert s in self.statelist,"Input does not appear in list of states. Possibly wrong name/spelling"
         df = self.statedict[s]
         
         dates = df['date']
@@ -116,7 +120,7 @@ class NYTCovid:
         else:
             plt.title("Cumulative cases in {}".format(s),fontsize=18)
         plt.bar(x=dates,height=cases,color='blue',edgecolor='k')
-        plt.xticks(rotation=45,fontsize=14)
+        plt.xticks(rotation=15,fontsize=16)
         plt.show()
         
         print()
@@ -127,7 +131,7 @@ class NYTCovid:
         else:
             plt.title("Cumulative deaths in {}".format(s),fontsize=18)
         plt.bar(x=dates,height=deaths,color='red',edgecolor='k')
-        plt.xticks(rotation=45,fontsize=14)
+        plt.xticks(rotation=15,fontsize=17)
         plt.show()
         
         print()
@@ -138,7 +142,7 @@ class NYTCovid:
         else:
             plt.title("New cases in {}".format(s),fontsize=18)
         plt.bar(x=dates,height=newcases,color='yellow',edgecolor='k')
-        plt.xticks(rotation=45,fontsize=14)
+        plt.xticks(rotation=15,fontsize=17)
         plt.show()
         
         print()
@@ -149,7 +153,7 @@ class NYTCovid:
         else:
             plt.title("New deaths in {}".format(s),fontsize=18)
         plt.bar(x=dates,height=newdeaths,color='orange',edgecolor='k')
-        plt.xticks(rotation=45,fontsize=14)
+        plt.xticks(rotation=15,fontsize=17)
         plt.show()
         
     def plot_multi_state(self, 
@@ -170,7 +174,7 @@ class NYTCovid:
                         self.statedict[s]['cases'][-31:-1],
                         color=color,
                         linewidth=2)
-                plt.xticks(rotation=45,fontsize=14)
+                plt.xticks(rotation=15,fontsize=17)
             plt.legend(states,fontsize=14)
             plt.show()
         else:
@@ -183,7 +187,7 @@ class NYTCovid:
                         self.statedict[s]['cases'],
                         color=color,
                         linewidth=2)
-                plt.xticks(rotation=45,fontsize=14)
+                plt.xticks(rotation=15,fontsize=17)
             plt.legend(states,fontsize=14)
             plt.show()
     

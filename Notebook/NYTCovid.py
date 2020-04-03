@@ -14,7 +14,7 @@ import requests
 import matplotlib.pyplot as plt
 import seaborn as sns
 import time
-from datetime import date
+from datetime import datetime
 
 class NYTCovid:
     def __init__(self):
@@ -23,10 +23,11 @@ class NYTCovid:
         self._stateupdated = False
         self._countyupdated = False
         self._processed = False
-        self._today = date.today()
+        self._today = datetime.today()
     
     def today(self):
-        print("Today is:",self._today)
+        'Prints today\'s date'
+        print("Today is:",self._today.strftime("%B %d, %Y"))
     
     def updateState(self,
                      url="https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"):
@@ -253,3 +254,10 @@ class NYTCovid:
         axs[3].set_title("New deaths on {}".format(str(d)),
                         fontsize=15)
         plt.show()
+
+
+def main():
+    n=NYTCovid()
+    return n
+
+main()

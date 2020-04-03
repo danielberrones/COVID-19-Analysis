@@ -1,10 +1,8 @@
-#Hello all, I'm Daniel Berrones and I plan to insert my own ideas into the interface that Dr. Sarkar has brilliantly put together for this COVID-19 data.
-###### Thank you Dr. Sarkar #########
-#####For Crafting This Helpful Tool#######
-
-# NYTCovid class definition
-# Dr. Tirthajyoti Sarkar, Fremont, CA
-# March-April 2020
+#############################################################
+# Hello all, I'm Daniel Berrones and I plan to tweak the interface that Dr. Sarkar has brilliantly put together for this COVID-19 data.  I hope that you're using your time wisely whilst adhering to the stay at home procedure!  :)  
+# Email (daniel.a.berrones@gmail.com)
+# Website (http://www.danielberrones.com)
+#############################################################
 
 
 import numpy as np

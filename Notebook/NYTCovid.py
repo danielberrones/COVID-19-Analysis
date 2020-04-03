@@ -14,11 +14,10 @@ import requests
 import matplotlib.pyplot as plt
 import seaborn as sns
 import time
-import datetime
+from datetime import date
 
 class NYTCovid:
     def __init__(self):
-        from datetime import date
         self.statedf = None
         self.countydf = None
         self._stateupdated = False

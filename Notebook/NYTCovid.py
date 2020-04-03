@@ -261,6 +261,14 @@ class NYTCovid:
 
 def main():
     n=NYTCovid()
-    return n
+    n.dateUpdate()
+    n.updateState()
+    n.peek()
+    n.plot_state(state='Illinois',last_30_days=True)
+    n.process()
+    n.plot_state(state='Illinois',last_30_days=True)
+    # n.plot_multi_state(states=['Illinois', 'Kentucky', 'Florida','New York'],last_30_days=True)
 
-main()
+
+if '__name__'=='__main__':
+    main()

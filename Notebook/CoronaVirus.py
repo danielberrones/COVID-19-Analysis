@@ -17,7 +17,7 @@ from datetime import datetime, date
 from io import StringIO
 from time import time, sleep
 
-class Corona:
+class CoronaVirus:
     def __init__(self):
         self.statedf = None
         self.countydf = None
@@ -245,30 +245,30 @@ class Corona:
                         fontsize=15)
         plt.show()
 
-
-def main():
-    n=Corona()
-
+def printIntro():
     print("".center(50,"*"))
     print("Welcome to the COVID-19 Data Analytics Center")
     print("".center(50,"*"))
-
     sleep(2)
+    return None
+
+def main():
+    corona=CoronaVirus()
     print("Updating State database...")
-
     sleep(2)
-    n.updateState()
+    corona.updateState()
     print("Updating County database...")
+    corona.updateCounty()
 
-    n.updateCounty()
-    n.peek()
-    n.process()
-    n.plot_state(state='Illinois',last_30_days=True)
-    n.plot_multi_state()
-    n.rankState(N=5,daterank='2020-04-02')
-    n.today()
+    corona.peek()
+    corona.process()
+    corona.plot_state(state='Illinois',last_30_days=True)
+    corona.plot_multi_state()
+    corona.rankState(N=5,daterank='2020-04-02')
+    corona.today()
 
 
 
 if '__name__'=='__main__':
+    printIntro()
     main()

@@ -14,7 +14,7 @@ import pandas as pd
 import requests
 import matplotlib.pyplot as plt
 import seaborn as sns
-from datetime import datetime
+from datetime import datetime, date
 from io import StringIO
 from time import time, sleep
 
@@ -198,7 +198,6 @@ class CoronaVirus:
             date: Date at which the ranking is done. 
                   Must be a string in the form '2020-3-27'
         """
-        from datetime import date
 
         cases = {}
         deaths = {}

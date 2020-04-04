@@ -47,11 +47,13 @@ class CoronaVirus:
         self.countydf['date'] =  pd.to_datetime(self.countydf['date'], format='%Y-%m-%d')
         self._countyupdated = True
     
-    def dateUpdate(self):
+    def dateOfData(self):
         if self._stateupdated:
             print("Date of the latest data:",self.statedf.iloc[-1]['date'].date())
         else:
             print("Data has not been updated!")
+            print("To fix the problem\n\t\t--> Use 'updateState()'")
+        return None
     
     def peek(self):
         if self._stateupdated:
@@ -63,6 +65,7 @@ class CoronaVirus:
             print("First 5 rows of county data")
             print("="*50)
             print(self.countydf.head())
+        return None
     
     def process(self):
         pd.set_option('mode.chained_assignment', None)
@@ -93,7 +96,6 @@ class CoronaVirus:
         'Plots statewise data'
         if self._processed==False:
             print("Data not processed. Cannot plot statewise.")
-            return None
         
         s = str(state)
         assert s in self.statelist,"Input does not appear in list of states. Possibly wrong name/spelling"
@@ -144,7 +146,7 @@ class CoronaVirus:
         plt.bar(x=dates,height=newcases,color='yellow',edgecolor='k')
         plt.xticks(rotation=15,fontsize=17)
         plt.show()
-        
+
         #########################
         print("NEW DEATHS") 
         plt.figure(figsize=(14,4))
@@ -157,7 +159,7 @@ class CoronaVirus:
         plt.show() 
         
     def plot_multi_state(self, 
-                         states = ['California','Michigan','New York'],
+                         states = ['Illinois','New York','Kentucky'],
                          last_30_days=False):
         """
         Plots multiple states data in a single plot for comparison
@@ -253,17 +255,13 @@ class CoronaVirus:
         plt.show()
 
 
-# def main():
-#     n=CoronaVirus()
-#     n.today()
-#     sleep(2)
-#     n.dateUpdate()
-#     n.updateState()
-#     n.plot_state(state='Illinois',last_30_days=True)
-#     n.process()
-#     n.plot_state(state='Illinois',last_30_days=True)
-#     # n.plot_multi_state(states=['Illinois', 'Kentucky', 'Florida','New York'],last_30_days=True)
+def main():
+    n=CoronaVirus()
+    print("Welcome to the COVID-19 Data Analytics Center")
+    sleep(3)
+    n.dateOfData()
 
 
-# if '__name__'=='__main__':
-#     main()
+
+if '__name__'=='__main__':
+    main()

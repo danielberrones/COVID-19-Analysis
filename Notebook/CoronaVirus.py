@@ -32,7 +32,7 @@ class CoronaVirus:
     
     def today(self):
         'Prints today\'s date'
-        print("Today is:",self._today.strftime("%B %d, %Y"))
+        print("",self._today.strftime("%B %d, %Y").center(50,"-"))
         return None
     
     def updateState(self):
@@ -218,35 +218,30 @@ class CoronaVirus:
 
         sorted_cases = sorted(((value, key) for (key,value) in cases.items()),reverse=True)
         sorted_cases = sorted_cases[:N]
+
         sorted_deaths = sorted(((value, key) for (key,value) in deaths.items()),reverse=True)
         sorted_deaths = sorted_deaths[:N]
+
         sorted_newcases = sorted(((value, key) for (key,value) in newcases.items()),reverse=True)
         sorted_newcases = sorted_newcases[:N]
+
         sorted_newdeaths = sorted(((value, key) for (key,value) in newdeaths.items()),reverse=True)
         sorted_newdeaths = sorted_newdeaths[:N]
 
         _,axs = plt.subplots(2,2,figsize=(15,9))
         axs = axs.ravel()
-        axs[0].bar(x=[val[1] for val in sorted_cases],
-                height=[val[0] for val in sorted_cases],
-                color='blue',edgecolor='k')
-        axs[0].set_title("Cumulative cases on {}".format(str(d)),
-                        fontsize=15)
-        axs[1].bar(x=[val[1] for val in sorted_deaths],
-                height=[val[0] for val in sorted_deaths],
-                color='red',edgecolor='k')
-        axs[1].set_title("Cumulative deaths on {}".format(str(d)),
-                        fontsize=15)
-        axs[2].bar(x=[val[1] for val in sorted_newcases],
-                height=[val[0] for val in sorted_newcases],
-                color='yellow',edgecolor='k')
-        axs[2].set_title("New cases on {}".format(str(d)),
-                        fontsize=15)
-        axs[3].bar(x=[val[1] for val in sorted_newdeaths],
-                height=[val[0] for val in sorted_newdeaths],
-                color='orange',edgecolor='k')
-        axs[3].set_title("New deaths on {}".format(str(d)),
-                        fontsize=15)
+        #0#########################
+        axs[0].bar(x=[val[1] for val in sorted_cases], height=[val[0] for val in sorted_cases], color='blue',edgecolor='k')
+        axs[0].set_title("Cumulative cases on {}".format(str(d)), fontsize=15)
+        #1#########################
+        axs[1].bar(x=[val[1] for val in sorted_deaths],height=[val[0] for val in sorted_deaths],color='red',edgecolor='k')
+        axs[1].set_title("Cumulative deaths on {}".format(str(d)),fontsize=15)
+        #2#########################
+        axs[2].bar(x=[val[1] for val in sorted_newcases],height=[val[0] for val in sorted_newcases],color='yellow',edgecolor='k')
+        axs[2].set_title("New cases on {}".format(str(d)),fontsize=15)
+        #3#########################
+        axs[3].bar(x=[val[1] for val in sorted_newdeaths],height=[val[0] for val in sorted_newdeaths],color='orange',edgecolor='k')
+        axs[3].set_title("New deaths on {}".format(str(d)),fontsize=15)
         plt.show()
 
 def printIntro():

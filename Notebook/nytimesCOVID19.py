@@ -32,9 +32,8 @@ class CoronaVirus:
         print("Today is:",self._today.strftime("%B %d, %Y"))
         return None
     
-    def updateState(self,
-                     url="https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"):
-        url = url
+    def updateState(self):
+        url = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"
         s=requests.get(url).content
         self.statedf = pd.read_csv(StringIO(s.decode('utf-8')))
         self.statedf['date'] =  pd.to_datetime(self.statedf['date'], format='%Y-%m-%d')
@@ -113,7 +112,7 @@ class CoronaVirus:
             newcases = df['newcases'][-31:-1]
             newdeaths = df['newdeaths'][-31:-1]
         
-        #CUMULATIVE CASES
+        print("CUMULATIVE CASES")
         plt.figure(figsize=(14,4))
         if last_30_days:
             plt.title("Cumulative cases in {}, for last 30 days".format(s),fontsize=18)
@@ -122,9 +121,8 @@ class CoronaVirus:
         plt.bar(x=dates,height=cases,color='blue',edgecolor='k')
         plt.xticks(rotation=15,fontsize=16)
         plt.show()
-        print("CUMULATIVE CASES")
         
-        #CUMULATIVE DEATHS
+        print("CUMULATIVE DEATHS")
         plt.figure(figsize=(14,4))
         if last_30_days:
             plt.title("Cumulative deaths in {}, for last 30 days".format(s),fontsize=18)
@@ -133,9 +131,8 @@ class CoronaVirus:
         plt.bar(x=dates,height=deaths,color='red',edgecolor='k')
         plt.xticks(rotation=15,fontsize=17)
         plt.show()
-        print("CUMULATIVE DEATHS")
 
-        #NEW CASES
+        print("NEW CASES")
         plt.figure(figsize=(14,4))
         if last_30_days:
             plt.title("New cases in {}, for last 30 days".format(s),fontsize=18)
@@ -144,9 +141,8 @@ class CoronaVirus:
         plt.bar(x=dates,height=newcases,color='yellow',edgecolor='k')
         plt.xticks(rotation=15,fontsize=17)
         plt.show()
-        print("NEW CASES")
         
-        #NEW DEATHS
+        prin("NEW DEATHS") 
         plt.figure(figsize=(14,4))
         if last_30_days:
             plt.title("New deaths in {}, for last 30 days".format(s),fontsize=18)
@@ -154,7 +150,7 @@ class CoronaVirus:
             plt.title("New deaths in {}".format(s),fontsize=18)
         plt.bar(x=dates,height=newdeaths,color='orange',edgecolor='k')
         plt.xticks(rotation=15,fontsize=17)
-        plt.show("NEW DEATHS")
+        plt.show() 
         
     def plot_multi_state(self, 
                          states = ['California','Michigan','New York'],

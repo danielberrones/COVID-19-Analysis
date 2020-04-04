@@ -46,14 +46,6 @@ class Corona:
         self.countydf['date'] =  pd.to_datetime(self.countydf['date'], format='%Y-%m-%d')
         self._countyupdated = True
     
-    def dateOfData(self):
-        if self._stateupdated:
-            print("Date of the latest data:",self.statedf.iloc[-1]['date'].date())
-        else:
-            print("Data has not been updated!")
-            print("To fix the problem\n--> Use 'updateState()'")
-        return None
-    
     def peek(self):
         if self._stateupdated:
             print("First 20 rows of state data")
@@ -256,20 +248,25 @@ class Corona:
 
 def main():
     n=Corona()
+
     print("".center(50,"*"))
     print("Welcome to the COVID-19 Data Analytics Center")
     print("".center(50,"*"))
+
     sleep(2)
-    print("Updating State database..")
+    print("Updating State database...")
+
     sleep(2)
     n.updateState()
-    print("Updating County database..")
+    print("Updating County database...")
+
     n.updateCounty()
     n.peek()
     n.process()
     n.plot_state(state='Illinois',last_30_days=True)
     n.plot_multi_state()
-    n.rankState(N=4,daterank='2020-04-02')
+    n.rankState(N=5,daterank='2020-04-02')
+    n.today()
 
 
 

@@ -17,7 +17,7 @@ from datetime import datetime, date
 from io import StringIO
 from time import time, sleep
 
-class CoronaVirus:
+class Corona:
     def __init__(self):
         self.statedf = None
         self.countydf = None
@@ -255,7 +255,7 @@ class CoronaVirus:
 
 
 def main():
-    n=CoronaVirus()
+    n=Corona()
     print("".center(50,"*"))
     print("Welcome to the COVID-19 Data Analytics Center")
     print("".center(50,"*"))

@@ -254,6 +254,8 @@ def printIntro():
     print("Welcome to the COVID-19 Data Analytics Center")
     print("".center(50,"*"))
     sleep(2)
+    CoronaVirus().today()
+    sleep(2)
     return None
 
 def main():
@@ -275,8 +277,7 @@ def main():
     corona.plot_state(state='Florida',last_30_days=True)
     corona.plot_state(state='Texas',last_30_days=True)
     corona.plot_multi_state()
-    corona.rankState(N=5,daterank='2020-04-02')
-    corona.today()
+    corona.rankState(N=5,daterank='2020-04-03')
 
 
 if '__name__'=='__main__':

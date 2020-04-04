@@ -111,7 +111,8 @@ class CoronaVirus:
             deaths = df['deaths'][-31:-1]
             newcases = df['newcases'][-31:-1]
             newdeaths = df['newdeaths'][-31:-1]
-        
+
+        #########################
         print("CUMULATIVE CASES")
         plt.figure(figsize=(14,4))
         if last_30_days:
@@ -121,7 +122,8 @@ class CoronaVirus:
         plt.bar(x=dates,height=cases,color='blue',edgecolor='k')
         plt.xticks(rotation=15,fontsize=16)
         plt.show()
-        
+
+        #########################
         print("CUMULATIVE DEATHS")
         plt.figure(figsize=(14,4))
         if last_30_days:
@@ -132,6 +134,7 @@ class CoronaVirus:
         plt.xticks(rotation=15,fontsize=17)
         plt.show()
 
+        #########################
         print("NEW CASES")
         plt.figure(figsize=(14,4))
         if last_30_days:
@@ -142,7 +145,8 @@ class CoronaVirus:
         plt.xticks(rotation=15,fontsize=17)
         plt.show()
         
-        prin("NEW DEATHS") 
+        #########################
+        print("NEW DEATHS") 
         plt.figure(figsize=(14,4))
         if last_30_days:
             plt.title("New deaths in {}, for last 30 days".format(s),fontsize=18)

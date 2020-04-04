@@ -52,19 +52,19 @@ class CoronaVirus:
             print("Date of the latest data:",self.statedf.iloc[-1]['date'].date())
         else:
             print("Data has not been updated!")
-            print("To fix the problem\n\t\t--> Use 'updateState()'")
+            print("To fix the problem\n--> Use 'updateState()'")
         return None
     
     def peek(self):
         if self._stateupdated:
-            print("First 5 rows of state data")
+            print("First 20 rows of state data")
             print("="*50)
-            print(self.statedf.head())
+            print(self.statedf.head(20))
         if self._countyupdated:
             print()
-            print("First 5 rows of county data")
+            print("First 20 rows of county data")
             print("="*50)
-            print(self.countydf.head())
+            print(self.countydf.head(20))
         return None
     
     def process(self):
@@ -257,11 +257,20 @@ class CoronaVirus:
 
 def main():
     n=CoronaVirus()
+    print("".center(50,"*"))
     print("Welcome to the COVID-19 Data Analytics Center")
-    sleep(3)
-    n.dateOfData()
+    print("".center(50,"*"))
+    sleep(2)
+    print("Updating State database..")
+    sleep(2)
+    n.updateState()
+    print("Updating County database..")
+    n.updateCounty()
+    n.peek()
 
 
 
 if '__name__'=='__main__':
     main()
+
+    #CoronaVirus

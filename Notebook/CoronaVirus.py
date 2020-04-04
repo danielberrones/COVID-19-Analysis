@@ -6,8 +6,8 @@
 # TODO: Build GUI framework to conceptualize data more easily
 
 #############################################################
-# Email (daniel.a.berrones@gmail.com)
-# Website (http://www.danielberrones.com)
+# Email [daniel.a.berrones@gmail.com]
+# Website [http://www.danielberrones.com]
 #############################################################
 
 

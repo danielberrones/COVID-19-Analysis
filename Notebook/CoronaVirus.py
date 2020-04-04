@@ -158,7 +158,7 @@ class Corona:
         plt.show() 
         
     def plot_multi_state(self, 
-                         states = ['Illinois','New York','Kentucky'],
+                         states = ['New York','Illinois','Kentucky'],
                          last_30_days=False):
         """
         Plots multiple states data in a single plot for comparison
@@ -209,7 +209,7 @@ class Corona:
         if daterank==None:
             d = self.statedf.iloc[-1]['date'].date()
         else:
-            d = datetime.datetime.strptime(daterank,'%Y-%m-%d').date()
+            d = datetime.strptime(daterank,'%Y-%m-%d').date()
 
         for s in self.statedict:
             df=self.statedict[s]
@@ -266,10 +266,12 @@ def main():
     print("Updating County database..")
     n.updateCounty()
     n.peek()
+    n.process()
+    n.plot_state(state='Illinois',last_30_days=True)
+    n.plot_multi_state()
+    n.rankState(N=4,daterank='2020-04-02')
 
 
 
 if '__name__'=='__main__':
     main()
-
-    #CoronaVirus

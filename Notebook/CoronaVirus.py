@@ -253,13 +253,13 @@ def printIntro():
     return None
 
 def main():
+    printIntro()
     corona=CoronaVirus()
     print("Updating State database...")
-    sleep(2)
     corona.updateState()
     print("Updating County database...")
     corona.updateCounty()
-
+    sleep(2)
     corona.peek()
     corona.process()
     corona.plot_state(state='Illinois',last_30_days=True)
@@ -268,7 +268,5 @@ def main():
     corona.today()
 
 
-
 if '__name__'=='__main__':
-    printIntro()
     main()

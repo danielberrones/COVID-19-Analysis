@@ -1,7 +1,10 @@
 #############################################################
-# Hello all, I'm Daniel Berrones and as you can see, I have forked 
-# this repo that Dr. Sarkar has brilliantly put together for COVID-19 data 
-# offered by the New York Times.  Take care and stay at home.. for now! :)
+# Hello all, I'm Daniel Berrones and as you can see, I forked 
+# this brilliant repo that Dr. Sarkar put together using COVID-19 data 
+# offered by the New York Times.  
+
+# TODO: Build GUI framework to conceptualize data more easily
+
 #############################################################
 # Email (daniel.a.berrones@gmail.com)
 # Website (http://www.danielberrones.com)
@@ -259,7 +262,6 @@ def main():
     corona.updateState()
     print("Updating County database...")
     corona.updateCounty()
-    sleep(2)
     corona.peek()
     corona.process()
     corona.plot_state(state='Illinois',last_30_days=True)

@@ -122,7 +122,7 @@ class CoronaVirus:
         plt.bar(x=dates,height=cases,color='blue',edgecolor='k')
         plt.xticks(rotation=15,fontsize=16)
         plt.show()
-        print()
+        print("CUMULATIVE CASES")
         
         #CUMULATIVE DEATHS
         plt.figure(figsize=(14,4))
@@ -133,7 +133,7 @@ class CoronaVirus:
         plt.bar(x=dates,height=deaths,color='red',edgecolor='k')
         plt.xticks(rotation=15,fontsize=17)
         plt.show()
-        print()
+        print("CUMULATIVE DEATHS")
 
         #NEW CASES
         plt.figure(figsize=(14,4))
@@ -144,7 +144,7 @@ class CoronaVirus:
         plt.bar(x=dates,height=newcases,color='yellow',edgecolor='k')
         plt.xticks(rotation=15,fontsize=17)
         plt.show()
-        print()
+        print("NEW CASES")
         
         #NEW DEATHS
         plt.figure(figsize=(14,4))
@@ -154,7 +154,7 @@ class CoronaVirus:
             plt.title("New deaths in {}".format(s),fontsize=18)
         plt.bar(x=dates,height=newdeaths,color='orange',edgecolor='k')
         plt.xticks(rotation=15,fontsize=17)
-        plt.show()
+        plt.show("NEW DEATHS")
         
     def plot_multi_state(self, 
                          states = ['California','Michigan','New York'],
@@ -253,18 +253,17 @@ class CoronaVirus:
         plt.show()
 
 
-def main():
-    n=CoronaVirus()
-    n.today()
-    sleep(2)
-    n.dateUpdate()
-    n.updateState()
-    n.peek()
-    n.plot_state(state='Illinois',last_30_days=True)
-    n.process()
-    n.plot_state(state='Illinois',last_30_days=True)
-    # n.plot_multi_state(states=['Illinois', 'Kentucky', 'Florida','New York'],last_30_days=True)
+# def main():
+#     n=CoronaVirus()
+#     n.today()
+#     sleep(2)
+#     n.dateUpdate()
+#     n.updateState()
+#     n.plot_state(state='Illinois',last_30_days=True)
+#     n.process()
+#     n.plot_state(state='Illinois',last_30_days=True)
+#     # n.plot_multi_state(states=['Illinois', 'Kentucky', 'Florida','New York'],last_30_days=True)
 
 
-if '__name__'=='__main__':
-    main()
+# if '__name__'=='__main__':
+#     main()

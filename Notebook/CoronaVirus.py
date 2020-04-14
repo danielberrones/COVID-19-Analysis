@@ -260,10 +260,6 @@ def main():
     corona.updateState()
     print("Updating County database...")
     corona.updateCounty()
-    print("Here's a peek...")
-    sleep(2)
-    corona.peek()
-    sleep(2)
     corona.process()
     corona.plot_state(state='Illinois',last_30_days=True)
     corona.plot_state(state='New York',last_30_days=True)
@@ -271,7 +267,7 @@ def main():
     corona.plot_state(state='California',last_30_days=True)
     corona.plot_state(state='Florida',last_30_days=True)
     corona.plot_state(state='Texas',last_30_days=True)
-    corona.plot_multi_state()
+    corona.plot_multi_state("Illinois, New York, Florida, California, Texas")
     corona.rankState(N=5,daterank='2020-04-03')
 
 

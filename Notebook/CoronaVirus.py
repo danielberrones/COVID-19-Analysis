@@ -11,7 +11,7 @@
 # Website [http://www.danielberrones.com]
 #############################################################
 
-
+import tkinter as tk
 import requests
 import numpy as np
 import pandas as pd

@@ -258,5 +258,8 @@ def main():
     corona.rankState(N=5,daterank='2020-04-13')
 
 
-if '__name__'=='__main__':
-    main()
+# if '__name__'=='__main__':
+#     main()
+
+
+main()

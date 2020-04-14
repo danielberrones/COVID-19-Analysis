@@ -254,8 +254,8 @@ def main():
     corona.plot_state(state='California',last_30_days=True)
     corona.plot_state(state='Florida',last_30_days=True)
     corona.plot_state(state='Texas',last_30_days=True)
-    corona.plot_multi_state("Illinois, New York, Florida, California, Texas")
-    corona.rankState(N=5,daterank='2020-04-03')
+    corona.plot_multi_state(states=['California','Michigan','Illinois'],last_30_days=False)
+    corona.rankState(N=5,daterank='2020-04-13')
 
 
 if '__name__'=='__main__':

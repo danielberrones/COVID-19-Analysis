@@ -50,18 +50,6 @@ class CoronaVirus:
         self.countydf['date'] =  pd.to_datetime(self.countydf['date'], format='%Y-%m-%d')
         self._countyupdated = True
     
-    def peek(self):
-        if self._stateupdated:
-            print("First 20 rows of state data")
-            print("="*50)
-            print(self.statedf.head(20))
-        if self._countyupdated:
-            print()
-            print("First 20 rows of county data")
-            print("="*50)
-            print(self.countydf.head(20))
-        return None
-    
     def process(self):
         pd.set_option('mode.chained_assignment', None)
         self.statedict= {}
@@ -250,7 +238,6 @@ def printIntro():
     print("".center(50,"*"))
     sleep(2)
     CoronaVirus().today()
-    sleep(2)
     return None
 
 def main():

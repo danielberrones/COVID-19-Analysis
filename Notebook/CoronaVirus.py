@@ -4,7 +4,7 @@
 #using COVID-19 data offered by the New York Times.  
 ############################################################
 
-#TODO: Build GUI framework to conceptualize data more easily
+#TODO: Build GUI framework to conceptualize data more easily using TKinter
 
 ############################################################
 #Email [daniel.a.berrones@gmail.com]
@@ -16,6 +16,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import tkinter as tk
 from datetime import datetime, date
 from io import StringIO
 from time import time, sleep

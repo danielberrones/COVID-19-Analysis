@@ -251,7 +251,7 @@ def main():
     corona.plot_state(state='Illinois',last_30_days=True)
     corona.plot_state(state='New York',last_30_days=True)
     corona.plot_multi_state(states=['New York','Indiana','Illinois','Kentucky'],last_30_days=False)
-    corona.rankState(N=5,daterank='2020-04-18')
+    corona.rankState(N=5,daterank='2020-04-24')
 
 
 main()

@@ -250,8 +250,10 @@ def main():
     corona.process()
     corona.plot_state(state='Illinois',last_30_days=True)
     corona.plot_state(state='New York',last_30_days=True)
-    corona.plot_multi_state(states=['New York','Indiana','Illinois','Kentucky'],last_30_days=False)
-    corona.rankState(N=5,daterank='2020-04-24')
+    corona.plot_state(state='Florida',last_30_days=True)
+    corona.plot_state(state='Kentucky',last_30_days=True)
+    corona.plot_multi_state(states=['New York','Florida','Illinois','Kentucky'],last_30_days=False)
+    corona.rankState(N=5,daterank='2020-04-27')
 
 
 main()

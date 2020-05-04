@@ -10,6 +10,7 @@
 #Email [daniel.a.berrones@gmail.com]
 #Website [http://www.danielberrones.com]
 ############################################################
+from itertools import product
 
 import requests
 import numpy as np
@@ -34,7 +35,7 @@ class CoronaVirus:
         'Prints today\'s date'
         print("",self._today.strftime("%B %d, %Y").center(50,"-"))
         return None
-    
+
     def updateState(self):
         url = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"
         s=requests.get(url).content
@@ -250,21 +251,23 @@ def main():
     corona.process()
     corona.plot_state(state='Illinois',last_30_days=True)
     corona.plot_state(state='New York',last_30_days=True)
-    corona.plot_state(state='Florida',last_30_days=True)
+    # corona.plot_state(state='Florida',last_30_days=True)
     corona.plot_state(state='Kentucky',last_30_days=True)
-    corona.plot_state(state='Texas',last_30_days=True)
+    # corona.plot_state(state='Texas',last_30_days=True)
     corona.plot_state(state='New Jersey',last_30_days=True)
     corona.plot_multi_state(states=['New York','Florida','Illinois','Kentucky'],last_30_days=False)
-    corona.rankState(N=5,daterank='2020-04-28')
+    corona.rankState(N=5,daterank='2020-05-02')
+    return corona
 
 
-main()
+# main()
 
+if "__name__" == "__main__":
+    main()
 
 
 
 # TESTING NEW INTERFACES FOR THE COVID19 DATA
-#
 #
 #
 #

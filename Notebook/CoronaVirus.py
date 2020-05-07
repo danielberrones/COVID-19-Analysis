@@ -256,7 +256,7 @@ def main():
     # corona.plot_state(state='Texas',last_30_days=True)
     corona.plot_state(state='New Jersey',last_30_days=True)
     corona.plot_multi_state(states=['New York','Florida','Illinois','Kentucky'],last_30_days=False)
-    corona.rankState(N=5,daterank='2020-05-02')
+    corona.rankState(N=5,daterank='2020-05-05')
     return corona
 
 

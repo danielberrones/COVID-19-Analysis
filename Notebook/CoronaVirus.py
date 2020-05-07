@@ -11,7 +11,6 @@
 #Website [http://www.danielberrones.com]
 ############################################################
 from itertools import product
-
 import requests
 import numpy as np
 import pandas as pd
@@ -42,14 +41,6 @@ class CoronaVirus:
         self.statedf = pd.read_csv(StringIO(s.decode('utf-8')))
         self.statedf['date'] =  pd.to_datetime(self.statedf['date'], format='%Y-%m-%d')
         self._stateupdated = True
-    
-    def updateCounty(self,
-                     url="https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"):
-        url = url
-        s=requests.get(url).content
-        self.countydf = pd.read_csv(StringIO(s.decode('utf-8')))
-        self.countydf['date'] =  pd.to_datetime(self.countydf['date'], format='%Y-%m-%d')
-        self._countyupdated = True
     
     def process(self):
         pd.set_option('mode.chained_assignment', None)
@@ -246,8 +237,6 @@ def main():
     printIntro()
     print("Updating State database...")
     corona.updateState()
-    print("Updating County database...")
-    corona.updateCounty()
     corona.process()
     corona.plot_state(state='Illinois',last_30_days=True)
     corona.plot_state(state='New York',last_30_days=True)
@@ -260,17 +249,40 @@ def main():
     return corona
 
 
-# main()
+main()
 
-if "__name__" == "__main__":
-    main()
+# if "__name__" == "__main__":
+#     main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 # TESTING NEW INTERFACES FOR THE COVID19 DATA
 #
 #
-#
+
 # import tkinter as tk
 # from pandas import DataFrame
 # import matplotlib.pyplot as plt

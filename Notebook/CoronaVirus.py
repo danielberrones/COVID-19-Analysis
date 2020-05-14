@@ -10,7 +10,7 @@
 #Email [daniel.a.berrones@gmail.com]
 #Website [http://www.danielberrones.com]
 ############################################################
-from itertools import product
+# from itertools import product
 import requests
 import numpy as np
 import pandas as pd
@@ -245,7 +245,7 @@ def main():
     # corona.plot_state(state='Texas',last_30_days=True)
     corona.plot_state(state='New Jersey',last_30_days=True)
     corona.plot_multi_state(states=['New York','Florida','Illinois','Kentucky'],last_30_days=False)
-    corona.rankState(N=5,daterank='2020-05-05')
+    corona.rankState(N=5,daterank='2020-05-12')
     return corona
 
 

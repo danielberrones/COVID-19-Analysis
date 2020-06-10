@@ -241,11 +241,18 @@ def main():
     corona.plot_state(state='Illinois',last_30_days=True)
     corona.plot_state(state='New York',last_30_days=True)
     # corona.plot_state(state='Florida',last_30_days=True)
-    corona.plot_state(state='Kentucky',last_30_days=True)
+    corona.plot_state(state='Michigan',last_30_days=True)
+    corona.plot_state(state='Texas',last_30_days=True)
+
+    #corona.plot_state(state='Kentucky',last_30_days=True)
     # corona.plot_state(state='Texas',last_30_days=True)
-    corona.plot_state(state='New Jersey',last_30_days=True)
+    #corona.plot_state(state='New Jersey',last_30_days=True)
     corona.plot_multi_state(states=['New York','Florida','Illinois','Kentucky'],last_30_days=False)
+<<<<<<< HEAD:Notebook/CoronaVirus.py
     corona.rankState(N=5,daterank='2020-06-03')
+=======
+    corona.rankState(N=5,daterank='2020-05-25')
+>>>>>>> 7ffae082389a8f9fc6759be72bf8da4148cce3d9:CoronaVirus.py
     return corona
 
 
@@ -253,29 +260,6 @@ main()
 
 # if "__name__" == "__main__":
 #     main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

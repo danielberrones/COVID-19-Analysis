@@ -1,5 +1,4 @@
 ############################################################
-############################################################
 #Hello all, I'm Daniel Berrones and as you can see, I 
 #forked this brilliant repo that Dr. Sarkar put together
 #using COVID-19 data offered by the New York Times.  
@@ -12,6 +11,7 @@
 #Website [http://www.danielberrones.com]
 ############################################################
 # from itertools import product
+
 import requests
 import numpy as np
 import pandas as pd
@@ -34,7 +34,6 @@ class CoronaVirus:
     def today(self):
         'Prints today\'s date'
         print("",self._today.strftime("%B %d, %Y").center(50,"-"))
-        return None
 
     def updateState(self):
         url = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"
@@ -241,26 +240,30 @@ def main():
     corona.process()
     #corona.plot_state(state='Illinois',last_30_days=True)
     #corona.plot_state(state='New York',last_30_days=True)
-    corona.plot_state(state='Florida',last_30_days=True)
+    # corona.plot_state(state='Florida',last_30_days=True)
     #corona.plot_state(state='Michigan',last_30_days=True)
     #corona.plot_state(state='Texas',last_30_days=True)
     #corona.plot_state(state='Kentucky',last_30_days=True)
-    # corona.plot_state(state='Texas',last_30_days=True)
+    corona.plot_state(state='Texas',last_30_days=True)
     #corona.plot_state(state='New Jersey',last_30_days=True)
     #corona.plot_multi_state(states=['New York','Florida','Illinois','Kentucky'],last_30_days=False)
 
 
 main()
 
-# if "__name__" == "__main__":
-#     main()
+
+
+
+
+
+
+
+
+
 
 
 
 # TESTING NEW INTERFACES FOR THE COVID19 DATA
-#
-#
-
 # import tkinter as tk
 # from pandas import DataFrame
 # import matplotlib.pyplot as plt

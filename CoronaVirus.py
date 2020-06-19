@@ -238,15 +238,14 @@ def main():
     print("Updating State database...")
     corona.updateState()
     corona.process()
-    #corona.plot_state(state='Illinois',last_30_days=True)
+    # corona.plot_state(state='Illinois',last_30_days=True)
     #corona.plot_state(state='New York',last_30_days=True)
     # corona.plot_state(state='Florida',last_30_days=True)
     #corona.plot_state(state='Michigan',last_30_days=True)
-    #corona.plot_state(state='Texas',last_30_days=True)
     #corona.plot_state(state='Kentucky',last_30_days=True)
-    corona.plot_state(state='Texas',last_30_days=True)
+    # corona.plot_state(state='Texas',last_30_days=True)
     #corona.plot_state(state='New Jersey',last_30_days=True)
-    #corona.plot_multi_state(states=['New York','Florida','Illinois','Kentucky'],last_30_days=False)
+    corona.plot_multi_state(states=['New York','Florida','Illinois','Kentucky','Texas','Arizona'],last_30_days=False)
 
 
 main()

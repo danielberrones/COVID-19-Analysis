@@ -239,6 +239,10 @@ def main():
     corona.updateState()
     corona.process()
     # corona.plot_state(state='Illinois',last_30_days=True)
+    # corona.plot_state(state='Kentucky',last_30_days=True)
+    # corona.plot_state(state='Texas',last_30_days=True)
+    # corona.plot_state(state='Arizona',last_30_days=True)
+    # corona.plot_state(state='California',last_30_days=True)
     corona.plot_multi_state(states=['New York','Florida','Illinois','Kentucky','Texas','Arizona'],last_30_days=False)
 
 

@@ -239,13 +239,14 @@ def main():
     corona.updateState()
     corona.process()
     #corona.plot_state(state='Illinois',last_30_days=True)
-    corona.plot_state(state='Kentucky',last_30_days=True)
-    corona.plot_state(state='Texas',last_30_days=True)
+    #corona.plot_state(state='Kentucky',last_30_days=True)
+    #corona.plot_state(state='Texas',last_30_days=True)
     #corona.plot_state(state='Arizona',last_30_days=True)
     #corona.plot_state(state='California',last_30_days=True)
     #corona.plot_state(state='Florida',last_30_days=True)
-    corona.plot_multi_state(states=['Texas','New York','Florida','Illinois','Kentucky','Arizona','California'],last_30_days=False)
-    corona.rankState()
+    #corona.plot_multi_state(states=['Texas','New York','Florida','Illinois','Kentucky','Arizona','California'],last_30_days=False)
+    corona.plot_multi_state(states=['Texas','Florida','Illinois','Kentucky','Arizona','California'],last_30_days=False)
+    #corona.rankState()
 
 
 main()
